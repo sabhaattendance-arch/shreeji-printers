@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shreeji Printers - Printer Sales, Repair, Cartridge Refilling, Parts and Office Stationery in Nerul, Navi Mumbai.">
+<title>Shreeji Printers | Printer Sales & Service</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#f5f7fb;color:#172033;line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1180px,92%);margin:auto}
+.topbar{background:#0b1220;color:#dbe7ff;font-size:13px;padding:8px 0}
+.topbar .container{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.nav{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid #e7ebf2;box-shadow:0 4px 20px #0b12200d}
+.nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:11px;font-weight:800;font-size:21px}
+.logo-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#1264ff,#5b9cff);display:grid;place-items:center;color:#fff;font-size:21px}
+.logo small{display:block;font-size:10px;color:#6b7280;font-weight:600;letter-spacing:1px}
+.menu{display:flex;gap:25px;align-items:center;font-size:14px;font-weight:700}
+.menu select{padding:9px 11px;border:1px solid #dce2eb;border-radius:9px;background:#fff;font-weight:700;color:#172033;cursor:pointer}
+.menu a:hover{color:#1264ff}
+.nav-btn{background:#1264ff;color:#fff;padding:11px 18px;border-radius:10px}
+.hero{background:linear-gradient(120deg,#071a3b,#0d4fd6);color:#fff;overflow:hidden}
+.hero .container{min-height:530px;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:40px;padding:65px 0}
+.badge{display:inline-block;background:#ffffff18;border:1px solid #ffffff2c;padding:7px 13px;border-radius:30px;font-size:12px;font-weight:700;margin-bottom:18px}
+.hero h1{font-size:clamp(38px,5vw,64px);line-height:1.05;margin-bottom:20px}
+.hero h1 span{color:#7db2ff}
+.hero p{font-size:17px;color:#d9e7ff;max-width:650px;margin-bottom:30px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:11px;font-weight:800;border:1px solid transparent;transition:.2s}
+.btn-primary{background:#fff;color:#0d4fd6}
+.btn-green{background:#19b65b;color:#fff}
+.btn-outline{border-color:#ffffff55;color:#fff}
+.btn:hover{transform:translateY(-2px)}
+.hero-card{background:#ffffff12;border:1px solid #ffffff22;border-radius:25px;padding:25px;backdrop-filter:blur(8px);box-shadow:0 25px 60px #0003}
+.printer-visual{height:300px;border-radius:20px;background:linear-gradient(145deg,#fff,#dbe6f7);position:relative;display:grid;place-items:center;color:#12213a}
+.printer{width:240px;height:135px;background:#25354d;border-radius:20px 20px 12px 12px;position:relative;box-shadow:0 20px 35px #0b122044}
+.printer:before{content:"";position:absolute;width:185px;height:72px;left:28px;top:-48px;background:#eef4fb;border-radius:10px;box-shadow:0 6px 12px #0002}
+.paper{position:absolute;width:155px;height:62px;background:#fff;left:42px;top:70px;border-radius:2px;box-shadow:0 3px 8px #0002}
+.dot{position:absolute;width:10px;height:10px;border-radius:50%;background:#36d27a;right:20px;top:22px}
+section{padding:75px 0}
+.section-head{text-align:center;margin-bottom:38px}
+.section-head .eyebrow{color:#1264ff;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:1.5px}
+.section-head h2{font-size:36px;margin:7px 0}
+.section-head p{color:#667085;max-width:650px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{background:#fff;border:1px solid #e9edf4;border-radius:17px;padding:25px;box-shadow:0 8px 30px #17203308;transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 15px 35px #17203315}
+.icon{width:52px;height:52px;border-radius:14px;background:#edf4ff;color:#1264ff;display:grid;place-items:center;font-size:23px;margin-bottom:16px}
+.card h3{font-size:18px;margin-bottom:8px}.card p{font-size:14px;color:#697386}
+.about{background:#fff}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.about-box{background:linear-gradient(135deg,#eaf2ff,#f7fbff);border-radius:24px;padding:35px;min-height:330px}
+.about-box h3{font-size:28px;margin-bottom:14px}.about-box p{color:#657083}
+.checks{margin-top:20px;display:grid;gap:10px}.check{font-weight:700;font-size:14px}.check span{color:#16a05a;margin-right:8px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.contact-card{background:#fff;border:1px solid #e9edf4;border-radius:18px;padding:28px}
+.contact-row{display:flex;gap:14px;margin:18px 0}.contact-icon{width:43px;height:43px;border-radius:12px;background:#edf4ff;color:#1264ff;display:grid;place-items:center;flex:none}
+form{display:grid;gap:13px}input,select,textarea{width:100%;padding:13px 14px;border:1px solid #dce2eb;border-radius:10px;font:inherit;outline:none;background:#fff}input:focus,select:focus,textarea:focus{border-color:#1264ff;box-shadow:0 0 0 3px #1264ff12}textarea{min-height:105px;resize:vertical}
+footer{background:#0b1220;color:#c8d1e2;padding:45px 0 20px}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}.footer-title{color:#fff;font-weight:800;margin-bottom:12px}.footer-links{display:grid;gap:8px;font-size:14px}.copyright{border-top:1px solid #ffffff14;margin-top:30px;padding-top:18px;font-size:12px;color:#8e9ab0}
+.lang{position:fixed;right:18px;bottom:18px;z-index:1100;background:#fff;border:1px solid #e2e7ef;box-shadow:0 8px 25px #0002;border-radius:12px;padding:8px}
+.lang select{padding:8px;border:0;width:auto}
+.mobile-toggle{display:none;background:none;border:0;font-size:25px}
+@media(max-width:850px){
+ .menu{display:none}.mobile-toggle{display:block}.nav-inner{height:65px}
+ .hero .container{grid-template-columns:1fr;padding:55px 0}.hero-card{display:none}
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .about-grid,.contact-grid{grid-template-columns:1fr}
+ .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:520px){
+ .grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}
+ .hero h1{font-size:40px}.section-head h2{font-size:29px}
+ .topbar .container{justify-content:center}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <div>📍 Nerul, Navi Mumbai</div>
+    <div>📞 <a href="tel:+919930056444">+91 99300 56444</a> &nbsp; | &nbsp; Open for Service & Inquiry</div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#">
+      <div class="logo-icon">🖨</div>
+      <div>Shreeji Printers<small><span data-key="tagline">SALES • SERVICE • SUPPORT</span></small></div>
+    </a>
+
+    <nav class="menu">
+      <select id="languageSelect" onchange="changeLanguage(this.value)" aria-label="Language">
+        <option value="en">English</option>
+        <option value="hi">हिंदी</option>
+        <option value="gu">ગુજરાતી</option>
+      </select>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact"><span data-key="contact">Contact</span></a>
+      <a class="nav-btn" href="https://wa.me/919699691717?text=Hello%20Shreeji%20Printers%2C%20I%20need%20information%20about%20printer%20service." target="_blank"><span data-key="whatsapp">WhatsApp</span></a>
+    </nav>
+    <button class="mobile-toggle" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container">
+    <div>
+      <div class="badge" data-key="badge"><span data-key="badge">TRUSTED PRINTER SALES & SERVICE</span></div>
+      <h1><span data-key="heroTitle">Reliable Printer <span>Sales & Service</span> for Your Business</span></h1>
+      <p><span data-key="heroDesc">Printer repairing, cartridge refilling, printer parts, new printer sales and complete office printing solutions from Shreeji Printers.</span></p>
+      <div class="actions">
+        <a class="btn btn-primary" data-key="priceBtn" href="#inquiry"><span data-key="priceBtn">Get Price Inquiry</span></a>
+        <a class="btn btn-green" href="https://wa.me/919699691717?text=Hello%20Shreeji%20Printers%2C%20I%20need%20printer%20service." target="_blank"><span data-key="waBtn">💬 WhatsApp Now</span></a>
+        <a class="btn btn-outline" href="tel:+919930056444"><span data-key="callBtn">📞 Call Now</span></a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="printer-visual">
+        <div class="printer"><div class="dot"></div><div class="paper"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span data-key="servicesEyebrow">What We Do</span></div>
+      <h2><span data-key="servicesTitle">Our <span data-key="why1">Professional Service</span>s</span></h2>
+      <p><span data-key="servicesDesc">Complete printer and office printing solutions under one roof.</span></p>
+    </div>
+
+    <div class="grid">
+      <div class="card"><div class="icon">🔧</div><h3><span data-key="s1Title">Printer Repairing</span></h3><p><span data-key="s1Desc">Paper jam, ADF sensor, roller, print head and other printer problems.</span></p></div>
+      <div class="card"><div class="icon">💧</div><h3><span data-key="s2Title">Ink & Toner Refill</span></h3><p><span data-key="s2Desc">Quality ink and toner refilling for regular office and home printing.</span></p></div>
+      <div class="card"><div class="icon">🖨️</div><h3><span data-key="s3Title">New Printer Sales</span></h3><p><span data-key="s3Desc">Epson, Canon, HP and other printer models based on your requirement.</span></p></div>
+      <div class="card"><div class="icon">⚙️</div><h3><span data-key="s4Title">Printer Parts</span></h3><p><span data-key="s4Desc">Drum unit, cartridge, rollers, spares and other printer components.</span></p></div>
+      <div class="card"><div class="icon">📄</div><h3><span data-key="s5Title">Colour Print & Xerox</span></h3><p><span data-key="s5Desc">Fast and quality colour printing and photocopy services.</span></p></div>
+      <div class="card"><div class="icon">🖤</div><h3><span data-key="s6Title">B/W Print & Xerox</span></h3><p><span data-key="s6Desc">Economical black and white printing for office and school work.</span></p></div>
+      <div class="card"><div class="icon">📑</div><h3><span data-key="s7Title">Scanning</span></h3><p><span data-key="s7Desc">Document scanning service for personal, school and office requirements.</span></p></div>
+      <div class="card"><div class="icon">📚</div><h3><span data-key="s8Title">Lamination & Binding</span></h3><p><span data-key="s8Desc">Lamination, spiral and book binding services for documents and projects.</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div>
+      <div class="section-head" style="text-align:left;margin-bottom:20px">
+        <div class="eyebrow"><span data-key="aboutEyebrow">About Shreeji Printers</span></div>
+        <h2><span data-key="aboutTitle">Your Printing Partner</span></h2>
+      </div>
+      <p><span data-key="aboutDesc">Shreeji Printers provides printer sales, repair and printing-related services for homes, offices, schools and businesses. Our focus is dependable service, practical solutions and customer support.</span></p>
+      <div class="checks">
+        <div class="check"><span>✓</span> <span data-key="check1">Printer Repair & Maintenance</span></div>
+        <div class="check"><span>✓</span> <span data-key="check2">Printer Sales & Parts</span></div>
+        <div class="check"><span>✓</span> <span data-key="check3">Cartridge & Toner Refilling</span></div>
+        <div class="check"><span>✓</span> <span data-key="check4">Office & School Stationery</span></div>
+      </div>
+    </div>
+    <div class="about-box">
+      <h3><span data-key="whyTitle">Why Choose Us?</span></h3>
+      <p><span data-key="whyDesc">One place for printer service, printing, refilling, stationery and related office requirements.</span></p>
+      <div class="checks">
+        <div class="check"><span>✓</span> Professional Service</div>
+        <div class="check"><span>✓</span> <span data-key="why2">Quick Response</span></div>
+        <div class="check"><span>✓</span> <span data-key="why3">Customer-Focused Support</span></div>
+        <div class="check"><span>✓</span> <span data-key="why4">WhatsApp Inquiry Facility</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="inquiry">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span data-key="inqEyebrow">Quick Inquiry</span></div>
+      <h2><span data-key="inqTitle">Get a Price or Service Quote</span></h2>
+      <p><span data-key="inqDesc">Fill the form and send your requirement directly to Shreeji Printers on WhatsApp.</span></p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3><span data-key="priceFormTitle">Printer Price Inquiry</span></h3><br>
+        <form onsubmit="sendInquiry(event)">
+          <input id="inqName" required placeholder="<span data-key="yourName">Your Name</span>">
+          <select id="inqBrand">
+            <option>Epson</option><option>Canon</option><option>HP</option><option>Other</option>
+          </select>
+          <input id="inqModel" placeholder="<span data-key="modelReq">Printer Model / Requirement</span>">
+          <textarea id="inqNote" placeholder="<span data-key="additional">Any additional requirement</span>"></textarea>
+          <button class="btn btn-green" type="submit"><span data-key="sendPrice">💬 Send Price Inquiry on WhatsApp</span></button>
+        </form>
+      </div>
+
+      <div class="contact-card" id="contact">
+        <h3><span data-key="serviceTitle">Printer Service Request</span></h3><br>
+        <form onsubmit="sendService(event)">
+          <input id="srvName" required data-ph="yourName" placeholder="Your Name">
+          <input id="srv<span data-key="phone">Phone</span>" required type="tel" placeholder="<span data-key="mobile">Mobile Number</span>">
+          <input id="srvPrinter" placeholder="<span data-key="brandModel">Printer Brand / Model</span>">
+          <textarea id="srvIssue" placeholder="<span data-key="problem">Describe Printer Problem</span>"></textarea>
+          <button class="btn" style="background:#1264ff;color:#fff" type="submit"><span data-key="sendService">🔧 Send Service Request</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow"><span data-key="contactEyebrow">Visit / Contact</span></div>
+      <h2>Shreeji Printers</h2>
+      <p><span data-key="contactDesc">For printer sales, service, refilling, printing and stationery requirements.</span></p>
+    </div>
+    <div class="contact-card">
+      <div class="contact-row"><div class="contact-icon">📍</div><div><b><span data-key="address">Address</span></b><br>Shop No. 11, Hira Arcade, Sector 23, Nerul (East), Navi Mumbai</div></div>
+      <div class="contact-row"><div class="contact-icon">📞</div><div><b>Phone</b><br><a href="tel:+919930056444">+91 99300 56444</a></div></div>
+      <div class="contact-row"><div class="contact-icon">💬</div><div><b>WhatsApp</b><br><a href="https://wa.me/919699691717" target="_blank"><span data-key="chat">Chat with Shreeji Printers</span></a></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-title">Shreeji Printers</div><p>Printer Sales • Repair • Refilling • Parts • Printing • Stationery</p></div>
+      <div><div class="footer-title"><span data-key="quickLinks">Quick Links</span></div><div class="footer-links"><a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div></div>
+      <div><div class="footer-title">Contact</div><div class="footer-links"><a href="tel:+919930056444">+91 99300 56444</a><a href="https://wa.me/919699691717" target="_blank">WhatsApp</a></div></div>
+    </div>
+    <div class="copyright">© <span id="year"></span> Shreeji Printers. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+const WA="919699691717";
+document.getElementById("year").textContent=new Date().getFullYear();
+
+function toggleMenu(){
+  const menu=document.querySelector(".menu");
+  menu.style.display=menu.style.display==="flex"?"none":"flex";
+  menu.style.position="absolute";
+  menu.style.top="65px";
+  menu.style.right="4%";
+  menu.style.background="#fff";
+  menu.style.padding="18px";
+  menu.style.borderRadius="12px";
+  menu.style.flexDirection="column";
+  menu.style.boxShadow="0 15px 35px #0002";
+}
+
+function openWA(message){
+  window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(message),"_blank");
+}
+function sendInquiry(e){
+  e.preventDefault();
+  const name=document.getElementById("inqName").value;
+  const brand=document.getElementById("inqBrand").value;
+  const model=document.getElementById("inqModel").value;
+  const note=document.getElementById("inqNote").value;
+  openWA("Hello Shreeji Printers,\n\nI want a printer price inquiry.\nName: "+name+"\nBrand: "+brand+"\nModel/Requirement: "+model+"\nAdditional Requirement: "+note);
+}
+function sendService(e){
+  e.preventDefault();
+  const name=document.getElementById("srvName").value;
+  const phone=document.getElementById("srvPhone").value;
+  const printer=document.getElementById("srvPrinter").value;
+  const issue=document.getElementById("srvIssue").value;
+  openWA("Hello Shreeji Printers,\n\nI need printer service.\nName: "+name+"\nMobile: "+phone+"\nPrinter: "+printer+"\nProblem: "+issue);
+}
+
+const translations = {
+  en: {
+    badge:"TRUSTED PRINTER SALES & SERVICE",
+    heroTitle:'Reliable Printer <span>Sales & Service</span> for Your Business',
+    heroDesc:"Printer repairing, cartridge refilling, printer parts, new printer sales and complete office printing solutions from Shreeji Printers.",
+    priceBtn:"Get Price Inquiry", waBtn:"💬 WhatsApp Now", callBtn:"📞 Call Now",
+    servicesEyebrow:"What We Do", servicesTitle:"Our Professional Services", servicesDesc:"Complete printer and office printing solutions under one roof.",
+    s1Title:"Printer Repairing",s1Desc:"Paper jam, ADF sensor, roller, print head and other printer problems.",
+    s2Title:"Ink & Toner Refill",s2Desc:"Quality ink and toner refilling for regular office and home printing.",
+    s3Title:"New Printer Sales",s3Desc:"Epson, Canon, HP and other printer models based on your requirement.",
+    s4Title:"Printer Parts",s4Desc:"Drum unit, cartridge, rollers, spares and other printer components.",
+    s5Title:"Colour Print & Xerox",s5Desc:"Fast and quality colour printing and photocopy services.",
+    s6Title:"B/W Print & Xerox",s6Desc:"Economical black and white printing for office and school work.",
+    s7Title:"Scanning",s7Desc:"Document scanning service for personal, school and office requirements.",
+    s8Title:"Lamination & Binding",s8Desc:"Lamination, spiral and book binding services for documents and projects.",
+    aboutEyebrow:"About Shreeji Printers",aboutTitle:"Your Printing Partner",
+    aboutDesc:"Shreeji Printers provides printer sales, repair and printing-related services for homes, offices, schools and businesses. Our focus is dependable service, practical solutions and customer support.",
+    check1:"Printer Repair & Maintenance",check2:"Printer Sales & Parts",check3:"Cartridge & Toner Refilling",check4:"Office & School Stationery",
+    whyTitle:"Why Choose Us?",whyDesc:"One place for printer service, printing, refilling, stationery and related office requirements.",
+    why1:"Professional Service",why2:"Quick Response",why3:"Customer-Focused Support",why4:"WhatsApp Inquiry Facility",
+    inqEyebrow:"Quick Inquiry",inqTitle:"Get a Price or Service Quote",inqDesc:"Fill the form and send your requirement directly to Shreeji Printers on WhatsApp.",
+    priceFormTitle:"Printer Price Inquiry",yourName:"Your Name",modelReq:"Printer Model / Requirement",additional:"Any additional requirement",sendPrice:"💬 Send Price Inquiry on WhatsApp",
+    serviceTitle:"Printer Service Request",mobile:"Mobile Number",brandModel:"Printer Brand / Model",problem:"Describe Printer Problem",sendService:"🔧 Send Service Request",
+    contactEyebrow:"Visit / Contact",contactDesc:"For printer sales, service, refilling, printing and stationery requirements.",
+    address:"Address",phone:"Phone",whatsapp:"WhatsApp",chat:"Chat with Shreeji Printers",quickLinks:"Quick Links",contact:"Contact",tagline:"SALES • SERVICE • SUPPORT"
+  },
+  hi: {
+    badge:"विश्वसनीय प्रिंटर बिक्री और सर्विस",
+    heroTitle:'आपके व्यवसाय के लिए भरोसेमंद <span>प्रिंटर सेल्स और सर्विस</span>',
+    heroDesc:"प्रिंटर रिपेयरिंग, कार्ट्रिज रिफिलिंग, प्रिंटर पार्ट्स, नए प्रिंटर और ऑफिस प्रिंटिंग की पूरी सुविधा।",
+    priceBtn:"रेट पूछें",waBtn:"💬 WhatsApp करें",callBtn:"📞 कॉल करें",
+    servicesEyebrow:"हम क्या करते हैं",servicesTitle:"हमारी प्रोफेशनल सेवाएं",servicesDesc:"प्रिंटर और ऑफिस प्रिंटिंग की पूरी सुविधा एक ही जगह।",
+    s1Title:"प्रिंटर रिपेयरिंग",s1Desc:"पेपर जाम, ADF सेंसर, रोलर, प्रिंट हेड और अन्य प्रिंटर समस्याओं का समाधान।",
+    s2Title:"इंक और टोनर रिफिल",s2Desc:"ऑफिस और घर के प्रिंटिंग के लिए क्वालिटी इंक और टोनर रिफिलिंग।",
+    s3Title:"नए प्रिंटर की बिक्री",s3Desc:"आपकी जरूरत के अनुसार Epson, Canon, HP और अन्य प्रिंटर मॉडल।",
+    s4Title:"प्रिंटर पार्ट्स",s4Desc:"ड्रम यूनिट, कार्ट्रिज, रोलर, स्पेयर और अन्य प्रिंटर पार्ट्स।",
+    s5Title:"कलर प्रिंट और ज़ेरॉक्स",s5Desc:"तेज और अच्छी क्वालिटी की कलर प्रिंटिंग और ज़ेरॉक्स सेवा।",
+    s6Title:"B/W प्रिंट और ज़ेरॉक्स",s6Desc:"ऑफिस और स्कूल के काम के लिए किफायती ब्लैक एंड व्हाइट प्रिंटिंग।",
+    s7Title:"स्कैनिंग",s7Desc:"पर्सनल, स्कूल और ऑफिस डॉक्यूमेंट के लिए स्कैनिंग सेवा।",
+    s8Title:"लैमिनेशन और बाइंडिंग",s8Desc:"डॉक्यूमेंट और प्रोजेक्ट के लिए लैमिनेशन, स्पाइरल और बुक बाइंडिंग।",
+    aboutEyebrow:"Shreeji Printers के बारे में",aboutTitle:"आपका प्रिंटिंग पार्टनर",
+    aboutDesc:"Shreeji Printers घर, ऑफिस, स्कूल और बिजनेस के लिए प्रिंटर सेल्स, रिपेयर और प्रिंटिंग सेवाएं देता है। हमारा ध्यान भरोसेमंद सेवा और ग्राहक सहायता पर है।",
+    check1:"प्रिंटर रिपेयर और मेंटेनेंस",check2:"प्रिंटर सेल्स और पार्ट्स",check3:"कार्ट्रिज और टोनर रिफिलिंग",check4:"ऑफिस और स्कूल स्टेशनरी",
+    whyTitle:"हमें क्यों चुनें?",whyDesc:"प्रिंटर सर्विस, प्रिंटिंग, रिफिलिंग, स्टेशनरी और ऑफिस जरूरतों के लिए एक ही जगह।",
+    why1:"प्रोफेशनल सर्विस",why2:"तेज रिस्पॉन्स",why3:"ग्राहक केंद्रित सहायता",why4:"WhatsApp इन्क्वायरी सुविधा",
+    inqEyebrow:"त्वरित पूछताछ",inqTitle:"रेट या सर्विस कोट प्राप्त करें",inqDesc:"फॉर्म भरें और अपनी जरूरत सीधे Shreeji Printers को WhatsApp पर भेजें।",
+    priceFormTitle:"प्रिंटर रेट पूछताछ",yourName:"आपका नाम",modelReq:"प्रिंटर मॉडल / जरूरत",additional:"कोई अतिरिक्त जरूरत",sendPrice:"💬 WhatsApp पर रेट पूछें",
+    serviceTitle:"प्रिंटर सर्विस रिक्वेस्ट",mobile:"मोबाइल नंबर",brandModel:"प्रिंटर ब्रांड / मॉडल",problem:"प्रिंटर की समस्या बताएं",sendService:"🔧 सर्विस रिक्वेस्ट भेजें",
+    contactEyebrow:"मिलें / संपर्क करें",contactDesc:"प्रिंटर बिक्री, सर्विस, रिफिलिंग, प्रिंटिंग और स्टेशनरी के लिए संपर्क करें।",
+    address:"पता",phone:"फोन",whatsapp:"WhatsApp",chat:"Shreeji Printers से चैट करें",quickLinks:"त्वरित लिंक",contact:"संपर्क",tagline:"सेल्स • सर्विस • सपोर्ट"
+  },
+  gu: {
+    badge:"વિશ્વસનીય પ્રિન્ટર વેચાણ અને સર્વિસ",
+    heroTitle:'તમારા વ્યવસાય માટે વિશ્વસનીય <span>પ્રિન્ટર સેલ્સ અને સર્વિસ</span>',
+    heroDesc:"પ્રિન્ટર રિપેરિંગ, કાર્ટ્રિજ રિફિલિંગ, પ્રિન્ટર પાર્ટ્સ, નવા પ્રિન્ટર અને ઓફિસ પ્રિન્ટિંગની સંપૂર્ણ સુવિધા.",
+    priceBtn:"ભાવ પૂછો",waBtn:"💬 WhatsApp કરો",callBtn:"📞 કોલ કરો",
+    servicesEyebrow:"અમે શું કરીએ છીએ",servicesTitle:"અમારી પ્રોફેશનલ સેવાઓ",servicesDesc:"પ્રિન્ટર અને ઓફિસ પ્રિન્ટિંગની સંપૂર્ણ સુવિધા એક જ જગ્યાએ.",
+    s1Title:"પ્રિન્ટર રિપેરિંગ",s1Desc:"પેપર જામ, ADF સેન્સર, રોલર, પ્રિન્ટ હેડ અને અન્ય પ્રિન્ટર સમસ્યાઓનું નિરાકરણ.",
+    s2Title:"ઈંક અને ટોનર રિફિલ",s2Desc:"ઓફિસ અને ઘરેલુ પ્રિન્ટિંગ માટે ગુણવત્તાયુક્ત ઈંક અને ટોનર રિફિલિંગ.",
+    s3Title:"નવા પ્રિન્ટર્સનું વેચાણ",s3Desc:"તમારી જરૂરિયાત મુજબ Epson, Canon, HP અને અન્ય પ્રિન્ટર મોડેલ્સ.",
+    s4Title:"પ્રિન્ટર પાર્ટ્સ",s4Desc:"ડ્રમ યુનિટ, કાર્ટ્રિજ, રોલર્સ, સ્પેર અને અન્ય પ્રિન્ટર પાર્ટ્સ.",
+    s5Title:"કલર પ્રિન્ટ અને ઝેરોક્સ",s5Desc:"ઝડપી અને ગુણવત્તાયુક્ત કલર પ્રિન્ટિંગ અને ઝેરોક્સ સેવા.",
+    s6Title:"B/W પ્રિન્ટ અને ઝેરોક્સ",s6Desc:"ઓફિસ અને સ્કૂલના કામ માટે કિફાયતી બ્લેક એન્ડ વ્હાઇટ પ્રિન્ટિંગ.",
+    s7Title:"સ્કેનિંગ",s7Desc:"વ્યક્તિગત, સ્કૂલ અને ઓફિસ ડોક્યુમેન્ટ માટે સ્કેનિંગ સેવા.",
+    s8Title:"લેમિનેશન અને બાઇન્ડિંગ",s8Desc:"ડોક્યુમેન્ટ અને પ્રોજેક્ટ માટે લેમિનેશન, સ્પાયરલ અને બુક બાઇન્ડિંગ.",
+    aboutEyebrow:"Shreeji Printers વિશે",aboutTitle:"તમારો પ્રિન્ટિંગ પાર્ટનર",
+    aboutDesc:"Shreeji Printers ઘર, ઓફિસ, સ્કૂલ અને વ્યવસાય માટે પ્રિન્ટર સેલ્સ, રિપેર અને પ્રિન્ટિંગ સેવાઓ આપે છે. અમારો ફોકસ વિશ્વસનીય સેવા અને ગ્રાહક સહાય પર છે.",
+    check1:"પ્રિન્ટર રિપેર અને મેન્ટેનન્સ",check2:"પ્રિન્ટર સેલ્સ અને પાર્ટ્સ",check3:"કાર્ટ્રિજ અને ટોનર રિફિલિંગ",check4:"ઓફિસ અને સ્કૂલ સ્ટેશનરી",
+    whyTitle:"અમને શા માટે પસંદ કરો?",whyDesc:"પ્રિન્ટર સર્વિસ, પ્રિન્ટિંગ, રિફિલિંગ, સ્ટેશનરી અને ઓફિસની જરૂરિયાતો માટે એક જ સ્થળ.",
+    why1:"પ્રોફેશનલ સર્વિસ",why2:"ઝડપી પ્રતિસાદ",why3:"ગ્રાહક કેન્દ્રિત સહાય",why4:"WhatsApp ઇન્ક્વાયરી સુવિધા",
+    inqEyebrow:"ઝડપી ઇન્ક્વાયરી",inqTitle:"ભાવ અથવા સર્વિસ કોટ મેળવો",inqDesc:"ફોર્મ ભરો અને તમારી જરૂરિયાત સીધી Shreeji Printers ને WhatsApp પર મોકલો.",
+    priceFormTitle:"પ્રિન્ટર ભાવ ઇન્ક્વાયરી",yourName:"તમારું નામ",modelReq:"પ્રિન્ટર મોડેલ / જરૂરિયાત",additional:"કોઈ વધારાની જરૂરિયાત",sendPrice:"💬 WhatsApp પર ભાવ પૂછો",
+    serviceTitle:"પ્રિન્ટર સર્વિસ રિક્વેસ્ટ",mobile:"મોબાઈલ નંબર",brandModel:"પ્રિન્ટર બ્રાન્ડ / મોડેલ",problem:"પ્રિન્ટરની સમસ્યા જણાવો",sendService:"🔧 સર્વિસ રિક્વેસ્ટ મોકલો",
+    contactEyebrow:"મુલાકાત / સંપર્ક",contactDesc:"પ્રિન્ટર સેલ્સ, સર્વિસ, રિફિલિંગ, પ્રિન્ટિંગ અને સ્ટેશનરી માટે સંપર્ક કરો.",
+    address:"સરનામું",phone:"ફોન",whatsapp:"WhatsApp",chat:"Shreeji Printers સાથે ચેટ કરો",quickLinks:"ઝડપી લિંક્સ",contact:"સંપર્ક",tagline:"સેલ્સ • સર્વિસ • સપોર્ટ"
+  }
+};
+
+function changeLanguage(lang){
+  const t=translations[lang]||translations.en;
+  document.querySelectorAll("[data-key]").forEach(el=>{
+    const key=el.getAttribute("data-key");
+    if(t[key]!==undefined) el.innerHTML=t[key];
+  });
+  document.querySelectorAll("[data-ph]").forEach(el=>{
+    const key=el.getAttribute("data-ph");
+    if(t[key]!==undefined) el.placeholder=t[key];
+  });
+  document.documentElement.lang=lang;
+  localStorage.setItem("shreejiLanguage",lang);
+}
+
+const savedLanguage=localStorage.getItem("shreejiLanguage")||"en";
+const languageSelect=document.getElementById("languageSelect");
+if(languageSelect) languageSelect.value=savedLanguage;
+changeLanguage(savedLanguage);
+
+</script>
+</body>
+</html>
