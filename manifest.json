@@ -1,0 +1,12 @@
+{
+  "name": "Shreeji Printers",
+  "short_name": "Shreeji Printers",
+  "description": "Printer Sales, Repair, Cartridge Refilling, Parts and Office Printing Services",
+  "start_url": "/shreeji-printers/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1769ff",
+  "orientation": "portrait-primary",
+  "lang": "en",
+  "scope": "/shreeji-printers/"
+}
